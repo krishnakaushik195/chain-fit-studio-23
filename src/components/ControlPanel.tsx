@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { FloatingSliders } from './FloatingSliders';
 
 interface Chain {
   name: string;
@@ -33,12 +34,23 @@ export const ControlPanel = ({
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   return (
-    <div
-      className={cn(
-        'fixed md:static bottom-0 left-0 right-0 glass-panel border-t border-gold/20 md:border-r md:border-t-0 md:w-[350px] max-h-[35vh] md:max-h-screen overflow-y-auto transition-transform duration-300 z-50',
-        isCollapsed && 'translate-y-[calc(100%-56px)] md:translate-y-0'
-      )}
-    >
+    <>
+      {/* Floating Sliders for Mobile */}
+      <div className="md:hidden">
+        <FloatingSliders
+          chainScale={chainScale}
+          onChainScaleChange={onChainScaleChange}
+          verticalOffset={verticalOffset}
+          onVerticalOffsetChange={onVerticalOffsetChange}
+        />
+      </div>
+
+      <div
+        className={cn(
+          'fixed md:static bottom-0 left-0 right-0 glass-panel border-t border-gold/20 md:border-r md:border-t-0 md:w-[350px] max-h-[35vh] md:max-h-screen overflow-y-auto transition-transform duration-300 z-50',
+          isCollapsed && 'translate-y-[calc(100%-56px)] md:translate-y-0'
+        )}
+      >
       {/* Mobile Header */}
       <div
         className="md:hidden flex justify-between items-center p-4 bg-transparent backdrop-blur-md cursor-pointer border-b border-gold/40"
@@ -131,6 +143,7 @@ export const ControlPanel = ({
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
