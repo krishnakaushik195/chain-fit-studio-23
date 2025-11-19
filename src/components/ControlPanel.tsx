@@ -55,46 +55,9 @@ export const ControlPanel = ({
 
       {/* Content */}
       <div className="p-5 md:p-8 space-y-6">
-        {/* Chain Selection */}
-        <div className="space-y-4">
-          <h3 className="text-sm md:text-base font-semibold text-gold drop-shadow-[0_0_10px_rgba(212,175,55,1)]">🔗 Select Chain</h3>
-          
-          <div className="grid grid-cols-2 md:grid-cols-1 gap-2 md:max-h-[250px] md:overflow-y-auto">
-            {chains.map((chain, idx) => (
-              <button
-                key={idx}
-                onClick={() => onSelectChain(idx)}
-                className={cn(
-                  'p-4 rounded-lg text-sm text-center transition-all border-2 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]',
-                  idx === currentIndex
-                    ? 'bg-gold/30 border-gold border-[3px] shadow-lg shadow-gold/50'
-                    : 'bg-transparent border-gold/50 hover:bg-gold/10 hover:border-gold'
-                )}
-              >
-                {chain.name}
-              </button>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              onClick={onPrevious}
-              className="px-4 py-3 bg-transparent hover:bg-gold/20 border-2 border-gold/60 hover:border-gold rounded-lg text-sm font-medium transition-all text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]"
-            >
-              ← Previous
-            </button>
-            <button
-              onClick={onNext}
-              className="px-4 py-3 bg-transparent hover:bg-gold/20 border-2 border-gold/60 hover:border-gold rounded-lg text-sm font-medium transition-all text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]"
-            >
-              Next →
-            </button>
-          </div>
-        </div>
-
         {/* Adjustments */}
         <div className="space-y-4">
-          <h3 className="text-sm md:text-base font-semibold text-gold drop-shadow-[0_0_10px_rgba(212,175,55,1)]">⚙️ Adjustments</h3>
+          <h3 className="text-sm md:text-base font-semibold text-gold drop-shadow-[0_0_10px_rgba(212,175,55,1)]">Adjustments</h3>
 
           {/* Chain Size */}
           <div className="space-y-2">
@@ -109,7 +72,7 @@ export const ControlPanel = ({
               step="0.05"
               value={chainScale}
               onChange={(e) => onChainScaleChange(parseFloat(e.target.value))}
-              className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:gradient-neon [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:shadow-primary/50"
+              className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-black [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-black"
             />
           </div>
 
@@ -126,9 +89,15 @@ export const ControlPanel = ({
               step="0.05"
               value={verticalOffset}
               onChange={(e) => onVerticalOffsetChange(parseFloat(e.target.value))}
-              className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:gradient-neon [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:shadow-primary/50"
+              className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-black [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-black"
             />
           </div>
+        </div>
+
+        {/* Chain Selection */}
+        <div className="space-y-4">
+          <h3 className="text-sm md:text-base font-semibold text-gold drop-shadow-[0_0_10px_rgba(212,175,55,1)]">Select Chain</h3>
+
         </div>
       </div>
     </div>
