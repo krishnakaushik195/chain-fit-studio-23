@@ -41,13 +41,13 @@ export const ControlPanel = ({
     >
       {/* Mobile Header */}
       <div
-        className="md:hidden flex justify-between items-center p-4 bg-black/10 backdrop-blur-md cursor-pointer border-b border-gold/25"
+        className="md:hidden flex justify-between items-center p-4 bg-transparent backdrop-blur-md cursor-pointer border-b border-gold/20"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
-        <div className="gold-text text-base font-semibold drop-shadow-lg">⚙️ Controls</div>
+        <div className="text-white text-base font-semibold drop-shadow-lg">⚙️ Controls</div>
         <ChevronDown
           className={cn(
-            'w-6 h-6 transition-transform text-gold drop-shadow-lg',
+            'w-6 h-6 transition-transform text-white drop-shadow-lg',
             !isCollapsed && 'rotate-180'
           )}
         />

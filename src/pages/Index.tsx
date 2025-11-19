@@ -85,7 +85,7 @@ const Index = () => {
       <div className="flex min-h-screen items-center justify-center">
         <div className="text-center space-y-4">
           <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-primary font-medium">Loading Chain Fit Studio...</p>
+          <p className="text-white font-medium">Loading...</p>
         </div>
       </div>
     );
