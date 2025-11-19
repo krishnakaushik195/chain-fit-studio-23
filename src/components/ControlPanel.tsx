@@ -65,7 +65,7 @@ export const ControlPanel = ({
                 key={idx}
                 onClick={() => onSelectChain(idx)}
                 className={cn(
-                  'p-4 rounded-lg text-sm text-center transition-all border-2',
+                  'p-4 rounded-lg text-sm text-center transition-all border-2 text-white',
                   idx === currentIndex
                     ? 'bg-gold/20 border-gold shadow-lg shadow-gold/30'
                     : 'bg-white/5 border-transparent hover:bg-gold/10'
@@ -79,13 +79,13 @@ export const ControlPanel = ({
           <div className="grid grid-cols-2 gap-2">
             <button
               onClick={onPrevious}
-              className="px-4 py-3 bg-black/20 hover:bg-gold/20 border border-gold/30 hover:border-gold/60 rounded-lg text-sm font-medium transition-all"
+              className="px-4 py-3 bg-black/20 hover:bg-gold/20 border border-gold/30 hover:border-gold/60 rounded-lg text-sm font-medium transition-all text-white"
             >
               ← Previous
             </button>
             <button
               onClick={onNext}
-              className="px-4 py-3 bg-black/20 hover:bg-gold/20 border border-gold/30 hover:border-gold/60 rounded-lg text-sm font-medium transition-all"
+              className="px-4 py-3 bg-black/20 hover:bg-gold/20 border border-gold/30 hover:border-gold/60 rounded-lg text-sm font-medium transition-all text-white"
             >
               Next →
             </button>
@@ -98,8 +98,8 @@ export const ControlPanel = ({
 
           {/* Chain Size */}
           <div className="space-y-2">
-            <div className="flex justify-between text-xs md:text-sm text-muted-foreground">
-              <span>Chain Size</span>
+            <div className="flex justify-between text-xs md:text-sm">
+              <span className="text-white">Chain Size</span>
               <span className="text-gold font-semibold">{Math.round(chainScale * 100)}%</span>
             </div>
             <input
@@ -115,8 +115,8 @@ export const ControlPanel = ({
 
           {/* Vertical Position */}
           <div className="space-y-2">
-            <div className="flex justify-between text-xs md:text-sm text-muted-foreground">
-              <span>Vertical Position</span>
+            <div className="flex justify-between text-xs md:text-sm">
+              <span className="text-white">Vertical Position</span>
               <span className="text-gold font-semibold">{verticalOffset.toFixed(2)}</span>
             </div>
             <input
